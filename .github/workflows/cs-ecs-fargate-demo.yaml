@@ -86,9 +86,9 @@ jobs:
         -ecs-spec-file /root/taskdefinition.json > taskdefinitionwithfalcon.json
         cat taskdefinitionwithfalcon.json
 
-    - name: Upload CrowdStrike Falcon Patched ECS Task Definition to ECS
-      run: |
-        aws ecs register-task-definition --cli-input-json file://taskdefinitionwithfalcon.json 1>/dev/null
+    # - name: Upload CrowdStrike Falcon Patched ECS Task Definition to ECS
+    #   run: |
+    #     aws ecs register-task-definition --cli-input-json file://taskdefinitionwithfalcon.json 1>/dev/null
     
     # Patch CloudFormation Format Sample using Parameters for Image URI (Requires Falcon Container 6.53+)
     - name: Patch CloudFormation with CrowdStrike Falcon ECS Patching utility
