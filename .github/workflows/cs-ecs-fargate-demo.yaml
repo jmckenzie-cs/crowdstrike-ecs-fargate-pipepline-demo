@@ -42,7 +42,7 @@ jobs:
       with:
         container_repository: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPO }}
         container_tag: ${{ env.GITHUB_SHA }}
-        crowdstrike_region: us-1
+        crowdstrike_region: us-2
         crowdstrike_score: 5000
         retry_count: 30
       env:
