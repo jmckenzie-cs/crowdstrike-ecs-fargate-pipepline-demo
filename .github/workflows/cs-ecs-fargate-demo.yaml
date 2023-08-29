@@ -24,7 +24,7 @@ jobs:
       #Update: Location of Crowdstrike sensor that patches task. 
       FALCON_IMAGE: mckenzie-images:7.02.0-4301.container.x86_64.Release.US-2
       #Update: Location of app images that will be deployed to ECS Fargate
-      ECR_REPO: mckenzie-images
+      ECR_REPO: mckenzie-images/
       GITHUB_SHA: ${{ github.sha }}
 
     steps:
