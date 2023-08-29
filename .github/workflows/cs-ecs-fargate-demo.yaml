@@ -22,9 +22,9 @@ jobs:
       #The registry where the images are stored
       ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID}}.dkr.ecr.us-west-2.amazonaws.com
       #Update: Location of Crowdstrike sensor that patches task. 
-      FALCON_IMAGE: ecs-pipeline-demo/falcon-sensor:6.57.0-4001.container.x86_64.Release.US-1
+      FALCON_IMAGE: mckenzie-images:7.02.0-4301.container.x86_64.Release.US-2
       #Update: Location of app images that will be deployed to ECS Fargate
-      ECR_REPO: ecs-pipeline-demo/app-images
+      ECR_REPO: mckenzie-images
       GITHUB_SHA: ${{ github.sha }}
 
     steps:
