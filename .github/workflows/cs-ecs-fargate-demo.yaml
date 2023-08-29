@@ -2,13 +2,13 @@ name: CrowdStrike ECS Fargate Demo
 
 on:
   ## scheduled job at 5:30 UTC every sunday
-  schedule:
-    - cron: '30 5 * * 0'
+  # schedule:
+  #   - cron: '30 5 * * 0'
   ## manual trigger
-  # workflow_dispatch
+  workflow_dispatch
   ## on push
-  push:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
 
 permissions:
       id-token: write
@@ -28,10 +28,12 @@ jobs:
       GITHUB_SHA: ${{ github.sha }}
 
     steps:
+    #Copies everything in this repository to the ubuntu container running the workflow
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Docker build & tag image
+    #Builds a new container image and tags it with a github SHA and with latest
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPO:$GITHUB_SHA -t $ECR_REGISTRY/$ECR_REPO:latest .
 
